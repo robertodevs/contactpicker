@@ -55,7 +55,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Contact Picker'),
+        title: Text('Contact Picker Demo'),
       ),
       body: _buildBody(),
       bottomNavigationBar: BottomAppBar(
@@ -161,7 +161,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                       heigth: 50.0,
                       txt: "Agregar",
                       ontap: () {
-                        null;
+                        print(phoneTextFieldController.text);
                       },
                     ),
                   ],
@@ -182,7 +182,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           minWidth: 40.0, minHeight: 40.0
       ),
       onPressed: () => {
-      _showContactList(context)
+        _showContactList(context)
 
       },
       child: Icon(
@@ -263,7 +263,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             _actualContact = e;
           });
 
-          guestnameTextFieldController.text = _actualContact.displayName;
+          guestnameTextFieldController.text = _actualContact.middleName;
           phoneTextFieldController.text = _actualContact.phones.first.value;
 
 
@@ -277,7 +277,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 }
 
 
-/// Class For Botton Custom
+/// Class For Custom Button
 class buttonCustom extends StatelessWidget {
   String txt;
   Color color;
